@@ -5,37 +5,26 @@ public class Main {
     public static void main(String[] args) {
         Human student = new Human("Dawid", "Grabowicz", 25);
         Human teacher = new Human("Zbigniew", "Boniek", 25);
-        Animal dog2 = new Animal("dog");
-        Animal dog = new Animal("dog");
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.takeForAWalk();
-        dog.feed();
-        System.out.println("----------------------------------------------");
-        Animal cat = new Animal("cat");
-        cat.feed();
-        cat.feed();
-        cat.takeForAWalk();
-        cat.takeForAWalk();
-        cat.takeForAWalk();
-        cat.takeForAWalk();
-        cat.takeForAWalk();
-        cat.takeForAWalk();
-        cat.takeForAWalk();
-        System.out.println("----------------------------------------------");
-        student.setPet(dog);
-        System.out.println(student.getPet().species);
-        student.pet.feed();
-        student.pet.takeForAWalk();
-        System.out.println("----------------------------------------------");
-        teacher.setPet(dog2);
-        System.out.println(teacher.getPet().species);
-        teacher.pet.feed();
-        teacher.pet.takeForAWalk();
+        Car opel = new Car("Astra", "Opel", "Red", 1999);
+        Car volvo = new Car("XC60", "Volvo", "Black", 2019);
+        student.car = opel;
+        teacher.car = volvo;
+
+        System.out.println("Imie: " + student.firstName);
+        System.out.println("Nazwisko: " + student.lastName);
+        System.out.println("Wiek: " + student.age);
+        System.out.println("Model smaochodu: " + student.car.model);
+        System.out.println("Producent smaochodu: " + student.car.producer);
+        System.out.println("Kolor smaochodu: " + student.car.colour);
+        System.out.println("Rok produkcji smaochodu: " + student.car.yearOfProduction);
+        System.out.println("-------------------------------------------------------");
+        System.out.println("Imie: " + teacher.firstName);
+        System.out.println("Nazwisko: " + teacher.lastName);
+        System.out.println("Wiek: " + teacher.age);
+        System.out.println("Model smaochodu: " + teacher.car.model);
+        System.out.println("Producent smaochodu: " + teacher.car.producer);
+        System.out.println("Kolor smaochodu: " + teacher.car.colour);
+        System.out.println("Rok produkcji smaochodu: " + teacher.car.yearOfProduction);
 
     }
 }
