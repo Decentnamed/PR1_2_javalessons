@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.Human;
+
 public class Car extends Device {
     public Double engineVolume;
     public String plates;
@@ -17,6 +19,21 @@ public class Car extends Device {
         System.out.println("Przekrecam kluczyk");
         System.out.println("Silnik się kreci i odpala");
         System.out.println("Chodzi na wolnych obrotach");
+    }
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price){
+            System.out.println("SORRY, NIE MASZ KASY");
+        } else if (seller.car != this){
+            System.out.println("SORRY, NIE MASZ SAMOCHODU");
+        } else{
+            seller.cash += price;
+            buyer.cash -= price;
+            seller.car = null;
+            buyer.car = this;
+            System.out.println("Udalo sie sprzedac samochód za " + price + " pln");
+        }
     }
 
     @Override

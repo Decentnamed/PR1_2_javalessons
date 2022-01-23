@@ -1,5 +1,7 @@
 package com.company.devices;
 
+import com.company.Human;
+
 public class Phone extends Device{
     public Double screenSize;
     public String os;
@@ -22,6 +24,21 @@ public class Phone extends Device{
         System.out.println("Czekaj...");
         System.out.println("Czekaj...");
         System.out.println("Uruchomiono urządzenie, na ekranie pojawilo sie logo!");
+    }
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price){
+            System.out.println("SORRY, NIE MASZ KASY");
+        } else if (seller.mobile != this){
+            System.out.println("SORRY, NIE MASZ TELEFONU");
+        } else{
+            seller.cash += price;
+            buyer.cash -= price;
+            seller.mobile = null;
+            buyer.mobile = this;
+            System.out.println("Udalo sie sprzedac telefon za " + price + " pln");
+        }
     }
 
     @Override

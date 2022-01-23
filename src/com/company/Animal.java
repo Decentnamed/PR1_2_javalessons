@@ -1,6 +1,6 @@
 package com.company;
 
-public class Animal {
+public class Animal implements Salleable {
     private static final Double DEFAULT_CAT_WEIGHT = 4.0;
     private static final Double DEFAULT_DOG_WEIGHT = 7.0;
     private static final Double DEFAULT_WEIGHT = 1.0;
@@ -39,6 +39,23 @@ public class Animal {
             }
         }else{
             System.out.println("Jestem niezywy, nie mozna mnie juz brac na spacer, dzwon po ksiedza!");
+        }
+    }
+
+    @Override
+    public void Sale(Human seller, Human buyer, Double price) {
+        if (buyer.cash < price){
+            System.out.println("SORRY, NIE MASZ KASY");
+        } else if (seller.pet != this){
+            System.out.println("SORRY, NIE MASZ TAKIEGO ZWIERZECIA");
+        } else if(seller.pet.species.equals("homo sapiens")){
+            System.out.println("NIE MOZNA HANDLOWAC LUDZMI");
+        } else {
+            seller.cash += price;
+            buyer.cash -= price;
+            seller.pet = null;
+            buyer.pet = this;
+            System.out.println("Udalo sie sprzedac zwierze za " + price + " pln");
         }
     }
 
