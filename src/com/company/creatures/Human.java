@@ -1,8 +1,8 @@
-package com.company;
+package com.company.creatures;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
-public class Human {
+public class Human extends Animal{
     public String firstName;
     public String lastName;
     public Integer age;
@@ -13,10 +13,11 @@ public class Human {
     public Double cash;
 
 
-    public Human(String firstName, String lastName, Integer age){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
+    public Human(){
+        super("homo sapiens");
+        this.firstName = "";
+        this.lastName = "lastName";
+        this.age = 0;
         this.salary = 0.0;
         this.cash = 0.0;
     }
