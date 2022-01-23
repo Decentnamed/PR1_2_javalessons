@@ -2,16 +2,22 @@ package com.company.devices;
 
 import com.company.creatures.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     public Double engineVolume;
     public String plates;
     public Double value;
+    public Double oil;
+    public Double capacitance;
+    public Double gas;
 
     public Car(String producer, String model, Integer yearOfProduction, String colour) {
         super(producer, model, yearOfProduction, colour);
         this.engineVolume = 1.9;
         this.value = 0.0;
         this.plates = "GD 08D30";
+        this.oil = 0.0;
+        this.capacitance = 0.0;
+        this.gas = 0.0;
     }
 
     @Override
@@ -35,6 +41,8 @@ public class Car extends Device {
             System.out.println("Udalo sie sprzedac samochód za " + price + " pln");
         }
     }
+
+    public abstract void Refuel();
 
     @Override
     public String toString(){
