@@ -1,4 +1,4 @@
-package com.company;
+package com.company.devices;
 
 public class Phone {
     public String model;
@@ -13,5 +13,9 @@ public class Phone {
         this.os = os;
         this.colour = colour;
         this.ramSize = ramSize;
+    }
+
+    public String toString(){
+        return "Model: " + model + " Screen size: " + screenSize + " Os: " + os + " Kolor: " + colour + "Ram size: " + ramSize + " GB";
     }
 }

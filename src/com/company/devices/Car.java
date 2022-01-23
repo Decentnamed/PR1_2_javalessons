@@ -1,4 +1,4 @@
-package com.company;
+package com.company.devices;
 
 public class Car {
     final String model;
@@ -15,5 +15,9 @@ public class Car {
         this.colour = colour;
         this.yearOfProduction = yearOfProduction;
         this.value = 0.0;
+    }
+
+    public String toString(){
+        return "Model: " + model + " Producent: " + producer + " Kolor: " + colour + " Rok produkcji: " + yearOfProduction;
     }
 }

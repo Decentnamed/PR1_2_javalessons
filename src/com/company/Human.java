@@ -1,6 +1,5 @@
 package com.company;
-import java.util.ArrayList;
-import java.util.List;
+import com.company.devices.Car;
 
 public class Human {
     public String firstName;
@@ -55,5 +54,9 @@ public class Human {
         }else{
             System.out.println("Nie udało się kupić auta, za mało zarabiasz");
         }
+    }
+
+    public String toString(){
+        return "Imie: " + firstName + " Nazwisko: " + lastName + " Wiek: " + age;
     }
 }

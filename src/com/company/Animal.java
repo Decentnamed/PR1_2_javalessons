@@ -41,4 +41,8 @@ public class Animal {
             System.out.println("Jestem niezywy, nie mozna mnie juz brac na spacer, dzwon po ksiedza!");
         }
     }
+
+    public String toString(){
+        return  "Gatunek: " + species + " waga: " + weight + " kg";
+    }
 }
