@@ -2,7 +2,6 @@ package com.company.devices;
 
 import com.company.creatures.Human;
 
-import java.util.Comparator;
 
 public abstract class Car extends Device {
     public Double engineVolume;
@@ -32,17 +31,17 @@ public abstract class Car extends Device {
     @Override
     public void Sale(Human seller, Human buyer, Double price) {
         if (buyer.cash < price){
-            System.out.println("SORRY, NIE MASZ KASY");
+            System.out.println(buyer + " SORRY, NIE MASZ TYLE KASY");
         } else if (!seller.hasCar(this)){
-            System.out.println("SORRY, NIE MASZ SAMOCHODU");
-        } else if (buyer.hasFreeSpace()){
-            System.out.println("SORRY, NIE MIEJSCA W GARAZU");
+            System.out.println(seller + " SORRY, NIE MASZ TAKIEGO SAMOCHODU");
+        } else if (!buyer.hasFreeSpace()){
+            System.out.println(buyer + " SORRY, NIE MASZ MIEJSCA W GARAZU");
         } else{
             seller.cash += price;
             buyer.cash -= price;
             seller.removeCar(this);
             buyer.addCar(this);
-            System.out.println("Udalo sie sprzedac samochód za " + price + " pln");
+            System.out.println(seller + ": Udalo sie sprzedac samochód za " + price + " pln dla: " + buyer);
         }
     }
 
