@@ -37,6 +37,46 @@ public class Main {
         student.cash = 100000.00;
         teacher.cash = 100000.00;
         dziekan.cash = 1000000.00;
+        student.salary = 1000000.00;
+        teacher.salary = 1000000.00;
+        dziekan.salary = 1000000.00;
+        System.out.println("TEST 1 -----------------------");
+        student.addCar(opel);
+        opel.carOwners();
+        System.out.println("TEST 2 -----------------------");
+        student.setCar(opel, 1);
+        opel.carOwners();
+        System.out.println("TEST 3-----------------------");
+        opel.Sale(student, teacher, 10.0);
+        opel.carOwners();
+        System.out.println("TEST 4-----------------------");
+        student.addCar(opel);
+        opel.Sale(student, teacher, 10.0);
+        System.out.println("TEST 5-----------------------");
+        System.out.println("Byli jacys wlasciciele? " + opel.checkOwners());
+        System.out.println("Byli jacys wlasciciele? " + tesla.checkOwners());
+        System.out.println("TEST 6-----------------------");
+        System.out.println("Liczba transakcji sprzedazy tego auta: " + opel.transactionCount());
+        System.out.println("TEST 7-----------------------");
+        System.out.println("SPRAWDZANIE SPRZEDAZY ( STUDENT DLA TEACHERA) " + opel.checkSelling(student, teacher));
+        System.out.println("SPRAWDZANIE SPRZEDAZY ( TEACHER DLA STUDENTA) " + opel.checkSelling(teacher, student));
+        System.out.println("SPRAWDZANIE SPRZEDAZY ( TEACHER DLA DZIEKANA) " + opel.checkSelling(teacher, dziekan));
+        System.out.println("SPRAWDZANIE SPRZEDAZY ( DZIEKAN DLA TEACHERA) " + opel.checkSelling(dziekan, teacher));
+        System.out.println("SPRAWDZANIE SPRZEDAZY ( STUDENT DLA DZIEKANA) " + opel.checkSelling(student, dziekan));
+        System.out.println("SPRAWDZANIE SPRZEDAZY ( DZIEKAN DLA STUDENTA) " + opel.checkSelling(dziekan, student));
+
+
+
+
+
+
+
+
+
+
+
+
+        /*
         System.out.println("TEST 1---------------------------------------------");
         student.addCar(opel);
         student.addCar(tesla);
@@ -88,65 +128,6 @@ public class Main {
         teacher.carList();
         teacher.sortCars();
         teacher.carList();
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.addCar(opel);
-        student.addCar(tesla);
-        student.addCar(vagen);
-        student.removeCar(tesla);
-        System.out.println(student.hasCar(opel));
-        System.out.println(student.getGarageValue());
-        teacher.addCar(opel);
-        teacher.addCar(tesla);
-        teacher.addCar(vagen);
-        System.out.println("----------------------------------");
-        opel.Sale(student, teacher, 10.0);
-        System.out.println("----------------------------------");
-        teacher.cash = 10.0;
-        System.out.println("Ilosc pieniedzy w portfelu przed kupnem nauczyciel " + teacher.cash);
-        System.out.println("Ilosc pieniedzy w portfelu przed kupnem student " + student.cash);
-        opel.Sale(student,teacher,10.0);
-        System.out.println("Ilosc pieniedzy w portfelu po zakupie nauczyciel " + teacher.cash);
-        System.out.println("Ilosc pieniedzy w portfelu po zakupie student " + student.cash);
-        System.out.println("----------------------------------");
-        opel.Sale(dziekan, student, 10.0);
-        System.out.println("----------------------------------");
-        student.cash = 1000.0;
-        opel.Sale(teacher, student, 10.0);
-        System.out.println("----------------------------------");
-        dziekan.cash = 10000.0;
-        opel.Sale(student, dziekan, 10.0);
-        */
-
-
-
-
-
-
-
+         */
     }
 }

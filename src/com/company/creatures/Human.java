@@ -40,6 +40,7 @@ public class Human extends Animal {
         return salary;
     }
 
+
     public void setSalary(Double salary) {
         if (salary <= 0) {
             System.out.println("Nie sądze, nie bede robil za darmo, a tym bardziej doplacal");
@@ -61,15 +62,17 @@ public class Human extends Animal {
 
     public void setCar(Car car, Integer space) {
         if (salary > car.value) {
-            if (garage[space] != null) {
+            if (garage[space] == null) {
                 this.garage[space] = car;
+                car.owners.add(this);
                 System.out.println("Udało sie kupić auto za gotówkę!");
             } else {
                 System.out.println("To miejsce w garazu jest juz zajete przez inne auto");
             }
         } else if (salary > (car.value / 12)) {
-            if (garage[space] != null) {
+            if (garage[space] == null) {
                 this.garage[space] = car;
+                car.owners.add(this);
                 System.out.println("Udało się kupić auto na kredyt!");
             } else {
                 System.out.println("To miejsce w garazu jest juz zajete przez inne auto");
