@@ -19,9 +19,14 @@ public class Main {
         Electric tesla = new Electric("Tesla", "v1", 2020, "Red");
         LPG vagen = new LPG("Volkswagen", "golf 4", 2000, "Black");
         Phone iphone = new Phone("Apple", "ios", 2020, 5.3, 8);
+        Phone samsung = new Phone("Samsung", "Android", 2020, 6.0, 8);
         Human student = new Human();
         Human teacher = new Human();
         Human dziekan = new Human();
+        Applications youTube = new Applications("Youtube", "1.1", 100.0);
+        Applications instagram = new Applications("Instagram", "1.2", 50.0);
+        Applications tikTok = new Applications("TikTok", "1.3", 25.0);
+        Applications gmail = new Applications("Gmail", "2.0", 0.0);
         opel.value = 10000.00;
         tesla.value = 100000.00;
         vagen.value = 1000.00;
@@ -40,30 +45,36 @@ public class Main {
         student.salary = 1000000.00;
         teacher.salary = 1000000.00;
         dziekan.salary = 1000000.00;
-        System.out.println("TEST 1 -----------------------");
-        student.addCar(opel);
-        opel.carOwners();
-        System.out.println("TEST 2 -----------------------");
-        student.setCar(opel, 1);
-        opel.carOwners();
-        System.out.println("TEST 3-----------------------");
-        opel.Sale(student, teacher, 10.0);
-        opel.carOwners();
-        System.out.println("TEST 4-----------------------");
-        student.addCar(opel);
-        opel.Sale(student, teacher, 10.0);
-        System.out.println("TEST 5-----------------------");
-        System.out.println("Byli jacys wlasciciele? " + opel.checkOwners());
-        System.out.println("Byli jacys wlasciciele? " + tesla.checkOwners());
-        System.out.println("TEST 6-----------------------");
-        System.out.println("Liczba transakcji sprzedazy tego auta: " + opel.transactionCount());
-        System.out.println("TEST 7-----------------------");
-        System.out.println("SPRAWDZANIE SPRZEDAZY ( STUDENT DLA TEACHERA) " + opel.checkSelling(student, teacher));
-        System.out.println("SPRAWDZANIE SPRZEDAZY ( TEACHER DLA STUDENTA) " + opel.checkSelling(teacher, student));
-        System.out.println("SPRAWDZANIE SPRZEDAZY ( TEACHER DLA DZIEKANA) " + opel.checkSelling(teacher, dziekan));
-        System.out.println("SPRAWDZANIE SPRZEDAZY ( DZIEKAN DLA TEACHERA) " + opel.checkSelling(dziekan, teacher));
-        System.out.println("SPRAWDZANIE SPRZEDAZY ( STUDENT DLA DZIEKANA) " + opel.checkSelling(student, dziekan));
-        System.out.println("SPRAWDZANIE SPRZEDAZY ( DZIEKAN DLA STUDENTA) " + opel.checkSelling(dziekan, student));
+        System.out.println("TEST 1------------------------------");
+        System.out.println("ILOSC PIENIEDZY STUDENTA W KIESZENI PRZED INSTALACJA " + student.cash + " pln");
+        iphone.installAnApp(student, youTube);
+        System.out.println("ILOSC PIENIEDZY STUDENTA W KIESZENI PO INSTALACJI " + student.cash + " pln");
+        System.out.println("TEST 2------------------------------");
+        System.out.println("Sprawdzanie po zadaniu obiektu do metody:");
+        System.out.println("Aplikacja " + youTube.name + " zainstalowana? " + iphone.appIsInstalled(youTube));
+        System.out.println("Aplikacja " + instagram.name + " zainstalowana? " + iphone.appIsInstalled(instagram));
+        System.out.println("TEST 3------------------------------");
+        System.out.println("Sprawdzanie bo zadaniu nazwy aplikacji do metody: ");
+        System.out.println("Aplikacja " + youTube.name + " zainstalowana? " + iphone.appIsInstalled(youTube.name));
+        System.out.println("Aplikacja " + instagram.name + " zainstalowana? " + iphone.appIsInstalled(instagram.name));
+        System.out.println("TEST 4------------------------------");
+        iphone.allFreeApps();
+        System.out.println("TEST 5------------------------------");
+        iphone.installAnApp(student, gmail);
+        iphone.allFreeApps();
+        System.out.println("TEST 6------------------------------");
+        System.out.println("VALUE ALL INSTALLED APPS: " + iphone.valueInstalledApps() + " PLN");
+        System.out.println("TEST 7------------------------------");
+        iphone.installAnApp(student, tikTok);
+        iphone.installAnApp(student, instagram);
+        iphone.allInstalledAppNames();
+        System.out.println("TEST 8------------------------------");
+        iphone.allInstalledAppCheapest();
+        System.out.println("TEST 9------------------------------");
+        samsung.installAnApp(teacher, youTube);
+        samsung.installAnApp(teacher, youTube);
+
+
 
 
 
